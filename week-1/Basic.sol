@@ -41,9 +41,47 @@ contract SimpleStorages {
 
 contract PublicStorages {
 
-    uint256 public  favoriteNumber;
-    function store(uint256 _favoriteNumber) public {
+    uint256 public  favoriteNumber; // Store The favoriteNumber
+
+
+    function store(uint256 _favoriteNumber) public { // Update The favoriteNumber
         favoriteNumber = _favoriteNumber;
+    }
+    // view, pure
+    function retrieve() public view returns(uint256) { //  View the favoriteNumber
+      return favoriteNumber;
+    }
+
+}
+
+
+// SImple Storage Solidity Arrays & Structs
+
+
+contract complexStore {
+
+    uint256   myFavoriteNumber;
+
+    //   uint256[]  favoriteNumbers;
+    struct Person {
+      uint256 favoriteNumber;
+      string name;
+    }
+
+    Person public Arjun = Person({favoriteNumber: 7, name: "Arjun"});
+    Person public mariah = Person({favoriteNumber: 5, name: "mariah"});
+    Person public jon = Person({favoriteNumber: 56, name: "jon"});
+    Person public krish = Person({favoriteNumber: 67, name: "krish"});
+    Person public patrick = Person({favoriteNumber: 90, name: "patrick"});
+
+
+
+    function store(uint256 _favoriteNumber) public {
+        myFavoriteNumber = _favoriteNumber;
+    }
+    // view, pure
+    function retrieve() public view returns(uint256) {
+      return myFavoriteNumber;
     }
 
 }
