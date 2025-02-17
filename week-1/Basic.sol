@@ -31,3 +31,19 @@ contract SimpleStorages {
     }
 
 }
+
+
+
+// public : visible externally and internally 
+// private : only visible in the current contract 
+// external : only visible externally (only for function) -i.e can only be message-called(via.func)
+// internal :only visible internally
+
+contract PublicStorages {
+
+    uint256 public  favoriteNumber;
+    function store(uint256 _favoriteNumber) public {
+        favoriteNumber = _favoriteNumber;
+    }
+
+}
