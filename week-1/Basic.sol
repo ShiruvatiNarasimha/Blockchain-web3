@@ -58,6 +58,35 @@ contract PublicStorages {
 // SImple Storage Solidity Arrays & Structs
 
 
+// contract complexStore {
+
+//     uint256   myFavoriteNumber;
+
+//     //   uint256[]  favoriteNumbers;
+//     struct Person {
+//       uint256 favoriteNumber;
+//       string name;
+//     }
+
+//     Person public Arjun = Person({favoriteNumber: 7, name: "Arjun"});
+//     Person public mariah = Person({favoriteNumber: 5, name: "mariah"});
+//     Person public jon = Person({favoriteNumber: 56, name: "jon"});
+//     Person public krish = Person({favoriteNumber: 67, name: "krish"});
+//     Person public patrick = Person({favoriteNumber: 90, name: "patrick"});
+
+
+
+//     function store(uint256 _favoriteNumber) public {
+//         myFavoriteNumber = _favoriteNumber;
+//     }
+//     // view, pure
+//     function retrieve() public view returns(uint256) {
+//       return myFavoriteNumber;
+//     }
+
+// }
+
+
 contract complexStore {
 
     uint256   myFavoriteNumber;
@@ -67,12 +96,11 @@ contract complexStore {
       uint256 favoriteNumber;
       string name;
     }
+     
 
-    Person public Arjun = Person({favoriteNumber: 7, name: "Arjun"});
-    Person public mariah = Person({favoriteNumber: 5, name: "mariah"});
-    Person public jon = Person({favoriteNumber: 56, name: "jon"});
-    Person public krish = Person({favoriteNumber: 67, name: "krish"});
-    Person public patrick = Person({favoriteNumber: 90, name: "patrick"});
+     // dynamic array
+     // static array
+    Person[] public listOfPeople; //[]
 
 
 
@@ -82,6 +110,12 @@ contract complexStore {
     // view, pure
     function retrieve() public view returns(uint256) {
       return myFavoriteNumber;
+    }
+
+    function addPerson(string memory _name, uint256 _favoriteNumber) public {
+      // Person memory newPerson = Person(_favoriteNumber, _name);
+      // listOfPeople.push(newPerson);
+      listOfPeople.push(Person(_favoriteNumber, _name));
     }
 
 }
