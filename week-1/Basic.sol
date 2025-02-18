@@ -119,3 +119,22 @@ contract complexStore {
     }
 
 }
+
+
+
+// 18-02-2025
+
+
+
+// The ENM can read and Write to several places  
+
+//  write & Read:               Write(not read)
+
+
+//  Stack                       * Logs
+//  Memory                      * Read(not Write)
+//  Storage                     * Transaction data(&Blobhash)
+//  Transient Storage           * Chain Data
+//  Calldata                    * Gas data
+//  Code                        * Program Counter
+//  Returndata                  * (other)
