@@ -138,3 +138,9 @@ contract complexStore {
 //  Calldata                    * Gas data
 //  Code                        * Program Counter
 //  Returndata                  * (other)
+
+
+
+// Basic Soildity Mappings
+    mapping(string => uint256) public nameToFavoriteNumber;
+
