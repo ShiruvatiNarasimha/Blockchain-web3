@@ -18,10 +18,6 @@ contract SimpleStorage {
 }
 
 
-
-
-
-
 contract SimpleStorages {
 
     uint256 favoriteNumber;
@@ -142,5 +138,34 @@ contract complexStore {
 
 
 // Basic Soildity Mappings
+   // mapping(string => uint256) public nameToFavoriteNumber;
+
+contract Store {
+
+    uint256   myFavoriteNumber;
+
+    struct Person {
+      uint256 favoriteNumber;
+      string name;
+    }
+     
+    Person[] public listOfPeople; //[]
+
     mapping(string => uint256) public nameToFavoriteNumber;
 
+    function store(uint256 _favoriteNumber) public {
+        myFavoriteNumber = _favoriteNumber;
+    }
+    // view, pure
+    function retrieve() public view returns(uint256) {
+      return myFavoriteNumber;
+    }
+
+    function addPerson(string memory _name, uint256 _favoriteNumber) public {
+      listOfPeople.push(Person(_favoriteNumber, _name));
+      nameToFavoriteNumber[_name] = _favoriteNumber;
+    }
+
+}
+
+// 19-02-2025
